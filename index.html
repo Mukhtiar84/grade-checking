@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade Checking App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: rgba(65, 225, 158, 0.404);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #result {
+            font-size: 24px;
+            color: rgba(0, 128, 0, 0.726);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        h1{
+            color:rgba(0, 128, 0, 0.726);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        label{
+            color:rgba(0, 128, 0, 0.726);
+           font-size: large;
+           font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+        }
+        #myInput{
+            color:rgba(0, 128, 0, 0.726);
+           font-size: large;
+           border: 2px solid;
+           height: 31px;
+           font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+           #grade{
+            font-size: large;
+            color: rgba(0, 128, 0, 0.726);
+            border: 2px solid;
+            height: 25px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+            
+
+           }
+           #result{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+           }
+    </style>
+</head>
+<body>
+    <h1>Grade Checking App</h1>
+    <form id="gradeForm">
+        <label for="grade">Enter your percentage grade:</label>
+        <input type="number" id="grade" name="grade" min="0" max="100" required>
+        <input type="submit" id="myInput" value="Check Grade">
+    </form>
+    <br>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("gradeForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const gradeInput = parseFloat(document.getElementById("grade").value);
+
+            if (isNaN(gradeInput)) {
+                document.getElementById("result").innerHTML = "Please enter a valid number.";
+            } else {
+                let resultText = "Your grade is ";
+
+               if (gradeInput >= 80) {
+                    resultText += "A+";
+                } else if (gradeInput >= 70) {
+                    resultText += "A";
+                } else if (gradeInput >= 60) {
+                    resultText += "B";
+                } else if (gradeInput >= 50) {
+                    resultText += "C";
+                } else if (gradeInput >= 0-49 ) {
+                    resultText += "F";
+                }
+                
+                document.getElementById("result").innerHTML = resultText;
+            }
+        });
+    </script>
+</body>
+</html>
