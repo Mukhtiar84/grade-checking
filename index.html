@@ -8,6 +8,7 @@
             text-align: center;
             background-color: rgba(65, 225, 158, 0.404);
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
         }
 
         #result {
@@ -46,12 +47,32 @@
            #result{
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
            }
+           .glass-container{
+            height: 200px;
+            width: 100%;
+            max-width: 440px;
+            color: rgba(0, 128, 0, 0.726);
+            text-align: center;
+            padding: 50px 50px;
+            border: 1px solid rgba(255,255,255,0,3);
+            background:rgba(255,255,255,0,2);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px  rgba(0, 128, 0, 0.726);
+            backdrop-filter: blur(16px);
+            margin: 0 auto;
+            top:50%;
+
+
+           }
     </style>
 </head>
+
 <body>
+    <div class="glass-container">
     <h1>Grade Checking App</h1>
     <form id="gradeForm">
         <label for="grade">Enter your percentage grade:</label>
+        <br>
         <input type="number" id="grade" name="grade" min="0" max="100" required>
         <input type="submit" id="myInput" value="Check Grade">
     </form>
@@ -84,6 +105,10 @@
                 document.getElementById("result").innerHTML = resultText;
             }
         });
-    </script>
+    </script></div>
+   
+</div>
 </body>
 </html>
+
+
